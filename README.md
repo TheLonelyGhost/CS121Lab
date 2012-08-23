@@ -34,7 +34,7 @@ Setup Eclipse, iLocker, and run through some basic string manipulation to make s
 
 ### Task 3 ###
 - Insert a few blank lines, then insert a comment labeled `//Task 3`
-- Create string `message5` that stores the substring of `message4 from above that will result in `message5` containing the phrase `"ALL STATE"`.
+- Create string `message5` that stores the substring of `message4` from above that will result in `message5` containing the phrase `"ALL STATE"`.
 - Print `message5` to console.
 
 ### Task 4 ###
