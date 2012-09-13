@@ -1,41 +1,62 @@
-CS121 - Lab 1
+CS121 - Lab 2
 =============
 
-**Date:** 2012-08-23
+**Date:** 2012-08-27
 
 # Synopsis #
 
-Setup Eclipse, iLocker, and run through some basic string manipulation to make sure everyone is up to speed.
+I need you to write a console Java program that translates a letter grade into a number grade. Letter grades are the usual: A B C D F, possibly followed by a + or -. Their numeric values are 4, 3, 2, 1, and 0, respectively. There is no F+ or F-. A *plus sign* increases the numeric value by 0.3, whereas a *minus sign* decreases it by 0.3. Input of A+ has the value 4.0. All other inputs have value -1.
 
-# Part 1: Learn how to use BSU iLocker for Project Storage #
+## Examples ##
+```
+output:      Enter a letter grade:
+input:       B-
+output:      Numeric value:  2.7
+```
 
-- Create a folder on your iLocker called "CS121", then a subfolder called "workspace".
-- Map iLocker as a network drive on your local computer.
+```
+output:      Enter a letter grade:
+input:       F-
+output:      Numeric value:  -1
+```
 
-# Part 2: Getting Started With Eclipse and Java #
+# Today's Challenge Uses #
 
-- Create a workspace
+- Classes, Objects, and Methods
+- Constructors
+- Data Encapsulation
+- Input from the Command Line
+- Relational Operators
+- Decision Constructs (if statements)
+- Strings
 
-# Part 3: String Manipulation #
+# Getting Started #
 
-## Task 1 ##
-- Insert a comment labeled `//Task 1`
-- Create two strings called `message1` and `message2`.
-- Assign the first string to `"Ball State"` and the second to `"Welcomes you!"`
-- Concatenate the two strings and print them to the console.
+1. Create a Project in Eclipse called **CS121-lab02-grade**.
+2. Create a new class file called `Grade` in your project.
+3. Download the `GradePrinter` class file from Blackboard and add it to the project. Notice that it instantiates an object `g` from a `Grade` class. You will be writing the `Grade` class, and upon finishing, `GradePrinter` will use it.
 
-## Task 2 ##
-- Insert a few blank lines, then insert a comment labeled `//Task 2`
-- Create string `message3` that stores `"BALL STATE UNIVERSITY"`
-- Create a string `message4` that stores the lowercase of the above string.
-- Print `message4` to console.
+# Tips #
 
-## Task 3 ##
-- Insert a few blank lines, then insert a comment labeled `//Task 3`
-- Create string `message5` that stores the substring of `message4` from above that will result in `message5` containing the phrase `"ALL STATE"`.
-- Print `message5` to console.
+To meet this challenge, you could put the following in your **Grade** class:
 
-## Task 4 ##
-- Open the new [Java SE 7 API Documentation](http://docs.oracle.com/javase/7/docs/api/index.html)
-- Navigate to the `Strings` Object (hint: look under `java.lang`)
-- Pick *any method* from Strings that we haven't used and implement it similarly to what we have done above.
+- a private string `letterGrade`
+- a constructor for `Grade` with an explicit parameter `String grade` that assigns that parameter to the class' `letterGrade`.
+- a `getLetterGrade` method that simply returns the `letterGrade`
+- a `getNumericGrade` method that
+    - stores the first character of `letterGrade` into a variable,
+    - checks to see if there is another character in `letterGrade`, and if so store it in another variable,
+        - then evaluates to see if it is a "+", "-", and if so, assign the appropriate value to a new double variable.
+    - converts the first character of `letterGrade`, the letter, into its appropriate value. Remember if there is no letter match, return -1;
+    - computes the numeric grade (i.e., grade value plus modifier value)
+    - ensures that an A+ shows up as 4.0 and not 4.3
+    - returns the value you derive from the incoming `grade` (this will be a `double`).
+
+# Grading #
+
+Review the following and then call a lab assistant over to check and grade your work as follows:
+
+- 5pts     Ensure there are no build errors.
+- 5pts     Ensure you have semantically solved the problem requested.
+- 10pts    Confirm the output from all possible input.
+- 5pts     Clean up indentation as necessary.
